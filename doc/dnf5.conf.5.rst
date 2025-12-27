@@ -1030,6 +1030,11 @@ configuration.
     Determines how DNF5 resolves host names. Set this to ``4``, ``IPv4``, ``6``, ``IPv6``
     to resolve to IPv4 or IPv6 addresses only.
 
+    When set to ``ipv6`` (or ``6``), DNF5 will only use IPv6 for DNS resolution.
+    This automatically disqualifies mirrors that do not have AAAA DNS records,
+    causing DNF5 to skip them and move to the next available mirror in the list.
+    DNS caching at the operating system level helps optimize subsequent lookups.
+
     Default: ``whatever``.
 
 .. _localpkg_gpgcheck_options-label:
